@@ -9,7 +9,7 @@ const ThemeContext = createContext<{
   toggleTheme: () => void;
 }>({
   theme: "dark",
-  toggleTheme: () => {},
+  toggleTheme: () => { },
 });
 
 export function ThemeProvider({ children }: { children: React.ReactNode }) {
@@ -23,10 +23,9 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
       setTheme(stored);
       document.documentElement.setAttribute("data-theme", stored);
     } else {
-      const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
-      const initial = prefersDark ? "dark" : "light";
-      setTheme(initial);
-      document.documentElement.setAttribute("data-theme", initial);
+      // Default to dark mode
+      setTheme("dark");
+      document.documentElement.setAttribute("data-theme", "dark");
     }
   }, []);
 
