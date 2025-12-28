@@ -189,11 +189,10 @@ export default function BlogPage() {
             <button
               key={cat.id}
               onClick={() => setActiveCategory(cat.id)}
-              className={`whitespace-nowrap rounded-full border px-5 py-2.5 text-sm font-semibold transition-all ${
-                activeCategory === cat.id
+              className={`whitespace-nowrap rounded-full border px-5 py-2.5 text-sm font-semibold transition-all ${activeCategory === cat.id
                   ? "border-[color:var(--gold)] bg-[color:var(--gold)] text-[color:var(--ink)] shadow-lg"
                   : "border-[color:var(--border)] bg-[color:var(--surface)] text-[color:var(--text-primary)] hover:border-[color:var(--border-hover)] hover:bg-[color:var(--surface-2)]"
-              }`}
+                }`}
             >
               {cat.label}
             </button>
@@ -204,36 +203,36 @@ export default function BlogPage() {
           {filteredArticles.map((article, idx) => (
             <div
               key={article.title}
-              className="group relative overflow-hidden rounded-[28px] border border-[color:var(--border)]/50 bg-[color:var(--surface)]/60 backdrop-blur-xl transition-all duration-500 hover:border-[color:var(--gold)]/50 hover:bg-[color:var(--surface)]/80 hover:shadow-[0_20px_70px_-15px_rgba(255,208,87,0.3)] hover:scale-[1.02]"
+              className="group relative overflow-hidden rounded-[28px] border-2 border-gray-200/80 dark:border-gray-700/80 bg-white/95 dark:bg-gray-900/95 backdrop-blur-2xl transition-all duration-500 hover:border-yellow-400/50 hover:shadow-[0_20px_70px_-15px_rgba(255,208,87,0.3)] hover:scale-[1.02]"
               style={{
                 animation: `float 6s ease-in-out infinite`,
                 animationDelay: `${idx * 0.1}s`,
               }}
             >
-              <div className="absolute inset-0 bg-gradient-to-br from-[color:var(--gold)]/5 via-transparent to-[color:var(--blue)]/5 opacity-0 transition-opacity duration-500 group-hover:opacity-100"></div>
-              
-              <div className="absolute -right-12 -top-12 h-32 w-32 rounded-full bg-[color:var(--gold)] opacity-0 blur-3xl transition-all duration-500 group-hover:opacity-20"></div>
+              <div className="absolute inset-0 bg-gradient-to-br from-yellow-400/5 via-transparent to-blue-500/5 opacity-0 transition-opacity duration-500 group-hover:opacity-100"></div>
+
+              <div className="absolute -right-12 -top-12 h-32 w-32 rounded-full bg-yellow-400 opacity-0 blur-3xl transition-all duration-500 group-hover:opacity-20"></div>
 
               <div className="relative p-6">
-                <div className="aspect-video overflow-hidden rounded-2xl bg-gradient-to-br from-[color:var(--surface)] to-[color:var(--surface-2)]">
+                <div className="aspect-video overflow-hidden rounded-2xl bg-gradient-to-br from-gray-100 to-gray-200 dark:from-gray-800 dark:to-gray-700">
                   <div className="flex h-full items-center justify-center">
                     <div className="text-4xl">📄</div>
                   </div>
                 </div>
 
                 <div className="mt-4">
-                  <div className="inline-flex items-center gap-1.5 rounded-full border border-[color:var(--border)] bg-[color:var(--surface-2)] px-3 py-1 text-xs font-semibold text-[color:var(--text-tertiary)]">
+                  <div className="inline-flex items-center gap-1.5 rounded-full border-2 border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-800 px-3 py-1 text-xs font-semibold text-gray-600 dark:text-gray-400">
                     {article.category}
                   </div>
-                  <h3 className="mt-3 text-lg font-bold text-[color:var(--text-primary)] transition-colors group-hover:text-[color:var(--gold)]">
+                  <h3 className="mt-3 text-lg font-bold text-gray-900 dark:text-white transition-colors group-hover:text-yellow-500">
                     {article.title}
                   </h3>
-                  <p className="mt-2 text-sm leading-6 text-[color:var(--text-secondary)]">
+                  <p className="mt-2 text-sm leading-6 text-gray-700 dark:text-gray-200">
                     {article.excerpt}
                   </p>
                 </div>
 
-                <div className="mt-4 flex items-center justify-between text-xs text-[color:var(--text-tertiary)]">
+                <div className="mt-4 flex items-center justify-between text-xs text-gray-600 dark:text-gray-400">
                   <div className="flex items-center gap-2">
                     <span>{article.author}</span>
                     <span>•</span>
@@ -241,7 +240,7 @@ export default function BlogPage() {
                   </div>
                   <button
                     onClick={() => shareArticle(article.title)}
-                    className="flex h-8 w-8 items-center justify-center rounded-full border border-[color:var(--border)] bg-[color:var(--surface-2)] transition-all hover:border-[color:var(--gold)] hover:bg-[color:var(--gold)]/10"
+                    className="flex h-8 w-8 items-center justify-center rounded-full border-2 border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-800 transition-all hover:border-yellow-400 hover:bg-yellow-400/10"
                   >
                     <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.368 2.684 3 3 0 00-5.368-2.684z" />
@@ -249,7 +248,7 @@ export default function BlogPage() {
                   </button>
                 </div>
 
-                <div className="absolute bottom-0 left-0 h-1 w-0 bg-gradient-to-r from-[color:var(--gold)] via-[color:var(--blue)] to-[color:var(--gold)] transition-all duration-500 group-hover:w-full"></div>
+                <div className="absolute bottom-0 left-0 h-1 w-0 bg-gradient-to-r from-yellow-400 via-blue-500 to-yellow-400 transition-all duration-500 group-hover:w-full"></div>
               </div>
             </div>
           ))}
