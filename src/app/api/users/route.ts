@@ -1,13 +1,12 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { prisma } from '@/lib/prisma';
-import { UserRole, UserStatus } from '@prisma/client';
 
 // GET /api/users - List all users (admin only)
 export async function GET(request: NextRequest) {
     try {
         const { searchParams } = new URL(request.url);
-        const role = searchParams.get('role') as UserRole | null;
-        const status = searchParams.get('status') as UserStatus | null;
+        const role = searchParams.get('role');
+        const status = searchParams.get('status');
         const page = parseInt(searchParams.get('page') || '1');
         const limit = parseInt(searchParams.get('limit') || '10');
         const skip = (page - 1) * limit;
@@ -86,13 +85,13 @@ export async function POST(request: NextRequest) {
                 email,
                 name,
                 password, // In production, hash this password!
-                role: role || UserRole.MEMBER,
+                role: role || 'MEMBER',
                 phone,
                 address,
                 city,
                 state,
                 zipCode,
-                status: UserStatus.ACTIVE,
+                status: 'ACTIVE',
             },
             select: {
                 id: true,
