@@ -224,7 +224,7 @@ export default function AdminPanel() {
                       <div key={user.id} className="flex items-center justify-between rounded-xl border border-gray-200 bg-gray-50 p-4">
                         <div className="flex items-center gap-3">
                           <div className="flex h-10 w-10 items-center justify-center rounded-full bg-blue-600 text-sm font-bold text-white">
-                            {user.name.split(" ").map((n) => n[0]).join("")}
+                            {user.name.split(" ").map((n: string) => n[0]).join("")}
                           </div>
                           <div>
                             <div className="text-sm font-semibold text-gray-900">{user.name}</div>
@@ -373,7 +373,7 @@ export default function AdminPanel() {
                           <td className="py-4">
                             <div className="flex items-center gap-3">
                               <div className="flex h-8 w-8 items-center justify-center rounded-full bg-blue-600 text-xs font-bold text-white">
-                                {user.name.split(" ").map((n) => n[0]).join("")}
+                                {user.name.split(" ").map((n: string) => n[0]).join("")}
                               </div>
                               <span className="text-sm font-semibold text-gray-900">{user.name}</span>
                             </div>
@@ -1710,9 +1710,9 @@ export default function AdminPanel() {
                             <div className="flex items-center gap-2 mb-1">
                               <h3 className="text-sm font-bold text-gray-900">{notification.title}</h3>
                               <span className={`inline-flex rounded-full px-2 py-1 text-xs font-semibold ${notification.type === "alert" ? "bg-red-100 text-red-700" :
-                                  notification.type === "warning" ? "bg-yellow-100 text-yellow-700" :
-                                    notification.type === "success" ? "bg-green-100 text-green-700" :
-                                      "bg-blue-100 text-blue-700"
+                                notification.type === "warning" ? "bg-yellow-100 text-yellow-700" :
+                                  notification.type === "success" ? "bg-green-100 text-green-700" :
+                                    "bg-blue-100 text-blue-700"
                                 }`}>
                                 {notification.type}
                               </span>
