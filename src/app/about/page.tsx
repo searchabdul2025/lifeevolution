@@ -241,11 +241,11 @@ export default function AboutPage() {
           </div>
         </div>
 
-        <div className="rounded-3xl border border-[color:var(--border)] bg-gradient-to-br from-[color:var(--surface)] to-[color:var(--surface-2)] p-10 text-center shadow-2xl">
-          <h3 className="text-2xl font-bold text-[color:var(--text-primary)]">
+        <div className="rounded-3xl border-2 border-gray-200/80 dark:border-gray-700/80 bg-white/95 dark:bg-gray-900/95 backdrop-blur-2xl p-10 text-center shadow-2xl">
+          <h3 className="text-2xl font-bold text-gray-900 dark:text-white">
             Join Our Team
           </h3>
-          <p className="mx-auto mt-4 max-w-2xl text-[color:var(--text-secondary)]">
+          <p className="mx-auto mt-4 max-w-2xl text-gray-700 dark:text-gray-200">
             We're always looking for talented individuals who share our passion for
             making insurance better. Explore open positions and help us build the future
             of protection.
@@ -253,7 +253,7 @@ export default function AboutPage() {
           <div className="mt-6 flex flex-wrap justify-center gap-3">
             <Link
               href="/careers"
-              className="inline-flex h-12 items-center justify-center gap-2 rounded-full bg-[color:var(--gold)] px-8 text-sm font-semibold text-[color:var(--ink)] transition-all hover:scale-105 hover:shadow-xl"
+              className="inline-flex h-12 items-center justify-center gap-2 rounded-full bg-yellow-400 px-8 text-sm font-semibold text-gray-900 transition-all hover:scale-105 hover:shadow-xl hover:bg-yellow-500"
             >
               View Open Positions
               <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -262,7 +262,7 @@ export default function AboutPage() {
             </Link>
             <Link
               href="/contact"
-              className="inline-flex h-12 items-center justify-center rounded-full border-2 border-[color:var(--gold)] bg-transparent px-8 text-sm font-semibold text-[color:var(--text-primary)] transition-all hover:bg-[color:var(--gold)] hover:text-[color:var(--ink)] hover:scale-105"
+              className="inline-flex h-12 items-center justify-center rounded-full border-2 border-yellow-400 bg-transparent px-8 text-sm font-semibold text-gray-900 dark:text-white transition-all hover:bg-yellow-400 hover:text-gray-900 hover:scale-105"
             >
               Contact Us
             </Link>
