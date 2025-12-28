@@ -5,9 +5,11 @@ export function SiteFooter() {
     <footer className="border-t border-[color:var(--border)] bg-[color:var(--bg)]">
       <div className="mx-auto grid max-w-6xl grid-cols-2 gap-8 px-4 py-12 md:grid-cols-4">
         <div className="col-span-2 md:col-span-1">
-          <div className="text-sm font-bold tracking-wide text-[color:var(--text-primary)]">
-            Life Evolutions X
-          </div>
+          <img
+            src="/logo.svg"
+            alt="Life Evolutions X"
+            className="h-8 w-auto mb-3"
+          />
           <div className="mt-3 text-sm text-[color:var(--text-secondary)]">
             Protection, care, and clarity — designed for modern life.
           </div>

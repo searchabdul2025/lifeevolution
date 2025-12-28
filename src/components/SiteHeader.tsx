@@ -11,11 +11,10 @@ function NavLink({ href, label }: { href: string; label: string }) {
   return (
     <Link
       href={href}
-      className={`text-sm font-medium transition-colors ${
-        active
+      className={`text-sm font-medium transition-colors ${active
           ? "text-[color:var(--text-primary)]"
           : "text-[color:var(--text-secondary)] hover:text-[color:var(--text-primary)]"
-      }`}
+        }`}
       aria-current={active ? "page" : undefined}
     >
       {label}
@@ -27,15 +26,12 @@ export function SiteHeader() {
   return (
     <header className="sticky top-0 z-50 border-b border-[color:var(--border)] bg-[color:var(--bg)]/80 backdrop-blur-xl">
       <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-3">
-        <Link href="/" className="group inline-flex items-center gap-2">
-          <span className="h-8 w-8 rounded-xl bg-gradient-to-br from-[color:var(--gold)] to-[color:var(--blue)] p-0.5">
-            <span className="flex h-full w-full items-center justify-center rounded-[10px] bg-[color:var(--bg)] text-xs font-bold text-[color:var(--text-primary)]">
-              LE
-            </span>
-          </span>
-          <span className="text-sm font-bold tracking-wide text-[color:var(--text-primary)]">
-            Life Evolutions X
-          </span>
+        <Link href="/" className="group inline-flex items-center">
+          <img
+            src="/logo.svg"
+            alt="Life Evolutions X"
+            className="h-8 w-auto md:h-10 transition-transform group-hover:scale-105"
+          />
         </Link>
 
         <nav className="hidden items-center gap-5 md:flex">
