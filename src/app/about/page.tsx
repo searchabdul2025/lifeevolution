@@ -151,14 +151,13 @@ export default function AboutPage() {
 
           <div className="relative mt-12">
             <div className="absolute left-1/2 top-0 h-full w-0.5 -translate-x-1/2 bg-gradient-to-b from-[color:var(--gold)] to-[color:var(--blue)]"></div>
-            
+
             <div className="space-y-12">
               {milestones.map((milestone, idx) => (
                 <div
                   key={milestone.year}
-                  className={`relative grid gap-8 md:grid-cols-2 ${
-                    idx % 2 === 0 ? "" : "md:flex-row-reverse"
-                  }`}
+                  className={`relative grid gap-8 md:grid-cols-2 ${idx % 2 === 0 ? "" : "md:flex-row-reverse"
+                    }`}
                 >
                   <div className={idx % 2 === 0 ? "md:text-right" : "md:col-start-2"}>
                     <div className="inline-block rounded-3xl border border-[color:var(--border)] bg-[color:var(--surface)] p-6 shadow-lg transition-all hover:shadow-2xl">
@@ -173,7 +172,7 @@ export default function AboutPage() {
                       </div>
                     </div>
                   </div>
-                  
+
                   <div className="absolute left-1/2 top-8 h-4 w-4 -translate-x-1/2 rounded-full border-4 border-[color:var(--bg)] bg-[color:var(--gold)] shadow-lg"></div>
                 </div>
               ))}
@@ -195,47 +194,47 @@ export default function AboutPage() {
             {team.map((member, idx) => (
               <div
                 key={member.name}
-                className="group relative overflow-hidden rounded-[28px] border border-[color:var(--border)]/50 bg-[color:var(--surface)]/60 p-6 backdrop-blur-xl transition-all duration-500 hover:border-[color:var(--gold)]/50 hover:bg-[color:var(--surface)]/80 hover:shadow-[0_20px_70px_-15px_rgba(255,208,87,0.3)] hover:scale-[1.03] hover:-translate-y-1"
+                className="group relative overflow-hidden rounded-[28px] border-2 border-gray-200/80 dark:border-gray-700/80 bg-white/90 dark:bg-gray-900/90 backdrop-blur-2xl p-6 shadow-xl transition-all duration-500 hover:border-yellow-400 hover:bg-white dark:hover:bg-gray-900 hover:shadow-[0_20px_70px_-15px_rgba(255,208,87,0.5)] hover:scale-[1.05] hover:-translate-y-2"
                 style={{
                   animation: `float 6s ease-in-out infinite`,
                   animationDelay: `${idx * 0.2}s`,
                 }}
               >
-                <div className="absolute inset-0 bg-gradient-to-br from-[color:var(--gold)]/5 via-transparent to-[color:var(--blue)]/5 opacity-0 transition-opacity duration-500 group-hover:opacity-100"></div>
-                
-                <div className="absolute -right-12 -top-12 h-32 w-32 rounded-full bg-[color:var(--gold)] opacity-0 blur-3xl transition-all duration-500 group-hover:opacity-20"></div>
-                <div className="absolute -left-8 -bottom-8 h-24 w-24 rounded-full bg-[color:var(--blue)] opacity-0 blur-3xl transition-all duration-500 group-hover:opacity-15"></div>
-                
+                <div className="absolute inset-0 bg-gradient-to-br from-yellow-400/10 via-transparent to-blue-600/10 opacity-0 transition-opacity duration-500 group-hover:opacity-100"></div>
+
+                <div className="absolute -right-12 -top-12 h-32 w-32 rounded-full bg-yellow-400 opacity-0 blur-3xl transition-all duration-500 group-hover:opacity-30"></div>
+                <div className="absolute -left-8 -bottom-8 h-24 w-24 rounded-full bg-blue-600 opacity-0 blur-3xl transition-all duration-500 group-hover:opacity-25"></div>
+
                 <div className="relative">
-                  <div className="h-24 w-24 rounded-2xl bg-gradient-to-br from-[color:var(--gold)] to-[color:var(--blue)] p-0.5 ring-1 ring-white/10 transition-all duration-500 group-hover:scale-110 group-hover:rotate-3">
-                    <div className="flex h-full w-full items-center justify-center rounded-[14px] bg-[color:var(--bg)] text-2xl font-bold text-[color:var(--text-primary)]">
+                  <div className="h-24 w-24 rounded-2xl bg-gradient-to-br from-yellow-400 to-blue-600 p-1 ring-4 ring-white/20 dark:ring-gray-800/20 transition-all duration-500 group-hover:scale-110 group-hover:rotate-3 shadow-lg">
+                    <div className="flex h-full w-full items-center justify-center rounded-xl bg-white dark:bg-gray-900 text-2xl font-bold text-gray-900 dark:text-white">
                       {member.avatar}
                     </div>
                   </div>
 
                   <div className="mt-5">
-                    <div className="text-lg font-bold text-[color:var(--text-primary)] transition-colors duration-300 group-hover:text-[color:var(--gold)]">
+                    <div className="text-lg font-bold text-gray-900 dark:text-white transition-colors duration-300 group-hover:text-yellow-500">
                       {member.name}
                     </div>
-                    <div className="mt-1 text-sm font-semibold text-[color:var(--blue)]">
+                    <div className="mt-1 text-sm font-semibold text-blue-600 dark:text-blue-400">
                       {member.role}
                     </div>
-                    <div className="mt-3 text-sm leading-6 text-[color:var(--text-secondary)]">
+                    <div className="mt-3 text-sm leading-6 text-gray-600 dark:text-gray-300">
                       {member.bio}
                     </div>
                   </div>
 
                   <Link
                     href={member.linkedin}
-                    className="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-[color:var(--blue)] transition-all duration-300 hover:gap-3 hover:text-[color:var(--gold)]"
+                    className="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-blue-600 dark:text-blue-400 transition-all duration-300 hover:gap-3 hover:text-yellow-500"
                   >
                     <span>Connect on LinkedIn</span>
                     <svg className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" fill="currentColor" viewBox="0 0 24 24">
-                      <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+                      <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
                     </svg>
                   </Link>
 
-                  <div className="absolute bottom-0 left-0 h-1 w-0 bg-gradient-to-r from-[color:var(--gold)] via-[color:var(--blue)] to-[color:var(--gold)] transition-all duration-500 group-hover:w-full"></div>
+                  <div className="absolute bottom-0 left-0 h-1 w-0 bg-gradient-to-r from-yellow-400 via-blue-600 to-yellow-400 transition-all duration-500 group-hover:w-full rounded-full"></div>
                 </div>
               </div>
             ))}
