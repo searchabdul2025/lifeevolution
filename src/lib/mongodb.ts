@@ -6,10 +6,19 @@ if (!MONGODB_URI && process.env.NODE_ENV === 'production') {
     throw new Error('Please define the MONGODB_URI environment variable')
 }
 
-let cached = global.mongoose
+interface MongooseCache {
+    conn: typeof mongoose | null
+    promise: Promise<typeof mongoose> | null
+}
 
-if (!cached) {
-    cached = global.mongoose = { conn: null, promise: null }
+declare global {
+    var mongoose: MongooseCache | undefined
+}
+
+let cached: MongooseCache = global.mongoose || { conn: null, promise: null }
+
+if (!global.mongoose) {
+    global.mongoose = cached
 }
 
 async function connectDB() {
