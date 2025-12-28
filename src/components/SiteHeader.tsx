@@ -12,8 +12,8 @@ function NavLink({ href, label }: { href: string; label: string }) {
     <Link
       href={href}
       className={`text-sm font-medium transition-colors ${active
-          ? "text-[color:var(--text-primary)]"
-          : "text-[color:var(--text-secondary)] hover:text-[color:var(--text-primary)]"
+        ? "text-[color:var(--text-primary)]"
+        : "text-[color:var(--text-secondary)] hover:text-[color:var(--text-primary)]"
         }`}
       aria-current={active ? "page" : undefined}
     >
@@ -28,7 +28,7 @@ export function SiteHeader() {
       <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-3">
         <Link href="/" className="group inline-flex items-center">
           <img
-            src="/logo.svg"
+            src="/logo.png"
             alt="Life Evolutions X"
             className="h-8 w-auto md:h-10 transition-transform group-hover:scale-105"
           />

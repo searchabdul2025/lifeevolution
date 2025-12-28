@@ -6,7 +6,7 @@ export function SiteFooter() {
       <div className="mx-auto grid max-w-6xl grid-cols-2 gap-8 px-4 py-12 md:grid-cols-4">
         <div className="col-span-2 md:col-span-1">
           <img
-            src="/logo.svg"
+            src="/logo.png"
             alt="Life Evolutions X"
             className="h-8 w-auto mb-3"
           />
