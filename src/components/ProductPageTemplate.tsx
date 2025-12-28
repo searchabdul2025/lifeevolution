@@ -50,14 +50,13 @@ export function ProductPageTemplate({
             <button
               key={type.name}
               onClick={() => setActiveType(idx)}
-              className={`group relative overflow-hidden rounded-3xl border p-6 text-left transition-all ${
-                activeType === idx
+              className={`group relative overflow-hidden rounded-3xl border p-6 text-left transition-all ${activeType === idx
                   ? "border-[color:var(--gold)] bg-gradient-to-br from-[color:var(--surface)] to-[color:var(--surface-2)] shadow-2xl scale-105"
                   : "border-[color:var(--border)] bg-[color:var(--surface)] hover:border-[color:var(--border-hover)] hover:shadow-lg"
-              }`}
+                }`}
             >
               <div className="absolute -right-8 -top-8 h-24 w-24 rounded-full bg-[color:var(--gold)] opacity-0 blur-2xl transition-opacity group-hover:opacity-10"></div>
-              
+
               <div className="relative">
                 <div className="text-4xl">{type.icon}</div>
                 <div className="mt-4 text-lg font-bold text-[color:var(--text-primary)]">
@@ -153,22 +152,22 @@ export function ProductPageTemplate({
 
         <div>
           <div className="text-center">
-            <div className="inline-flex items-center gap-2 rounded-full border border-[color:var(--border)] bg-[color:var(--surface)] px-3 py-1 text-xs font-semibold uppercase tracking-[0.22em] text-[color:var(--text-tertiary)]">
+            <div className="inline-flex items-center gap-2 rounded-full border-2 border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-900 px-3 py-1 text-xs font-semibold uppercase tracking-[0.22em] text-gray-600 dark:text-gray-400">
               Eligibility
             </div>
-            <h2 className="mt-6 text-3xl font-bold text-[color:var(--text-primary)]">
+            <h2 className="mt-6 text-3xl font-bold text-gray-900 dark:text-white">
               Who can apply?
             </h2>
           </div>
 
           <div className="mt-8 grid gap-6 md:grid-cols-3">
             {eligibility.map((item) => (
-              <div key={item.title} className="rounded-3xl border border-[color:var(--border)] bg-[color:var(--surface)] p-6 text-center shadow-lg">
+              <div key={item.title} className="rounded-3xl border-2 border-gray-200/80 dark:border-gray-700/80 bg-white/95 dark:bg-gray-900/95 backdrop-blur-2xl p-6 text-center shadow-lg">
                 <div className="text-4xl">{item.icon}</div>
-                <div className="mt-4 text-sm font-bold uppercase tracking-wider text-[color:var(--text-tertiary)]">
+                <div className="mt-4 text-sm font-bold uppercase tracking-wider text-gray-500 dark:text-gray-400">
                   {item.title}
                 </div>
-                <div className="mt-2 text-lg font-bold text-[color:var(--text-primary)]">
+                <div className="mt-2 text-lg font-bold text-gray-900 dark:text-white">
                   {item.value}
                 </div>
               </div>
@@ -178,10 +177,10 @@ export function ProductPageTemplate({
 
         <div>
           <div className="text-center">
-            <div className="inline-flex items-center gap-2 rounded-full border border-[color:var(--border)] bg-[color:var(--surface)] px-3 py-1 text-xs font-semibold uppercase tracking-[0.22em] text-[color:var(--text-tertiary)]">
+            <div className="inline-flex items-center gap-2 rounded-full border-2 border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-900 px-3 py-1 text-xs font-semibold uppercase tracking-[0.22em] text-gray-600 dark:text-gray-400">
               FAQs
             </div>
-            <h2 className="mt-6 text-3xl font-bold text-[color:var(--text-primary)]">
+            <h2 className="mt-6 text-3xl font-bold text-gray-900 dark:text-white">
               Common questions about {title.toLowerCase()}
             </h2>
           </div>
@@ -190,19 +189,18 @@ export function ProductPageTemplate({
             {faqs.map((faq, idx) => (
               <div
                 key={idx}
-                className="overflow-hidden rounded-2xl border border-[color:var(--border)] bg-[color:var(--surface)] transition-all hover:shadow-lg"
+                className="overflow-hidden rounded-2xl border-2 border-gray-200/80 dark:border-gray-700/80 bg-white/95 dark:bg-gray-900/95 backdrop-blur-2xl transition-all hover:shadow-lg"
               >
                 <button
                   onClick={() => setOpenFaq(openFaq === idx ? null : idx)}
                   className="flex w-full items-center justify-between p-6 text-left"
                 >
-                  <div className="text-sm font-bold text-[color:var(--text-primary)]">
+                  <div className="text-sm font-bold text-gray-900 dark:text-white">
                     {faq.q}
                   </div>
                   <svg
-                    className={`h-5 w-5 text-[color:var(--text-tertiary)] transition-transform ${
-                      openFaq === idx ? "rotate-180" : ""
-                    }`}
+                    className={`h-5 w-5 text-gray-600 dark:text-gray-400 transition-transform ${openFaq === idx ? "rotate-180" : ""
+                      }`}
                     fill="none"
                     viewBox="0 0 24 24"
                     stroke="currentColor"
@@ -211,8 +209,8 @@ export function ProductPageTemplate({
                   </svg>
                 </button>
                 {openFaq === idx && (
-                  <div className="border-t border-[color:var(--border)] bg-[color:var(--surface-2)] p-6">
-                    <div className="text-sm leading-6 text-[color:var(--text-secondary)]">
+                  <div className="border-t-2 border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-800/80 p-6">
+                    <div className="text-sm leading-6 text-gray-700 dark:text-gray-200">
                       {faq.a}
                     </div>
                   </div>
