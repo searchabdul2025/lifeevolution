@@ -32,7 +32,7 @@ model User {
   supportTickets SupportTicket[]
   notifications Notification[]
   agentClients  AgentClient[]
-  affiliateReferrals Referral[] @relation("AffiliateReferrals")
+  affiliate     Affiliate?
   memberReferrals    Referral[] @relation("MemberReferrals")
   applications  Application[]
   
@@ -188,6 +188,7 @@ enum TransactionStatus {
 model Affiliate {
   id            String   @id @default(cuid())
   userId        String   @unique
+  user          User     @relation(fields: [userId], references: [id], onDelete: Cascade)
   code          String   @unique
   commission    Decimal  @db.Decimal(5, 2) // percentage
   totalEarnings Decimal  @default(0) @db.Decimal(10, 2)
