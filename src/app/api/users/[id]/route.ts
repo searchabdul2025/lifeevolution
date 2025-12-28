@@ -4,11 +4,12 @@ import { prisma } from '@/lib/prisma';
 // GET /api/users/[id] - Get user by ID
 export async function GET(
     request: NextRequest,
-    { params }: { params: { id: string } }
+    { params }: { params: Promise<{ id: string }> }
 ) {
     try {
+        const { id } = await params;
         const user = await prisma.user.findUnique({
-            where: { id: params.id },
+            where: { id },
             include: {
                 quotes: { take: 5, orderBy: { createdAt: 'desc' } },
                 policies: { take: 5, orderBy: { createdAt: 'desc' } },
@@ -40,14 +41,15 @@ export async function GET(
 // PATCH /api/users/[id] - Update user
 export async function PATCH(
     request: NextRequest,
-    { params }: { params: { id: string } }
+    { params }: { params: Promise<{ id: string }> }
 ) {
     try {
+        const { id } = await params;
         const body = await request.json();
         const { password, ...updateData } = body;
 
         const user = await prisma.user.update({
-            where: { id: params.id },
+            where: { id },
             data: updateData,
             select: {
                 id: true,
@@ -73,11 +75,12 @@ export async function PATCH(
 // DELETE /api/users/[id] - Delete user
 export async function DELETE(
     request: NextRequest,
-    { params }: { params: { id: string } }
+    { params }: { params: Promise<{ id: string }> }
 ) {
     try {
+        const { id } = await params;
         await prisma.user.delete({
-            where: { id: params.id },
+            where: { id },
         });
 
         return NextResponse.json({ success: true });
