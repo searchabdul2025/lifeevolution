@@ -106,8 +106,8 @@ export default function ScheduleAppointmentPage() {
                     key={agent.id}
                     onClick={() => setSelectedAgent(agent.id)}
                     className={`flex w-full items-center gap-4 rounded-2xl border p-4 text-left transition-all ${selectedAgent === agent.id
-                        ? "border-[color:var(--gold)] bg-gradient-to-br from-[color:var(--gold)]/10 to-[color:var(--blue)]/10 shadow-lg"
-                        : "border-[color:var(--border)] bg-[color:var(--surface-2)] hover:border-[color:var(--border-hover)]"
+                      ? "border-[color:var(--gold)] bg-gradient-to-br from-[color:var(--gold)]/10 to-[color:var(--blue)]/10 shadow-lg"
+                      : "border-[color:var(--border)] bg-[color:var(--surface-2)] hover:border-[color:var(--border-hover)]"
                       }`}
                   >
                     <div className="h-14 w-14 rounded-full bg-gradient-to-br from-[color:var(--gold)] to-[color:var(--blue)] p-0.5">
@@ -154,8 +154,8 @@ export default function ScheduleAppointmentPage() {
                             setSelectedTime(time);
                           }}
                           className={`h-10 rounded-xl border text-xs font-semibold transition-all ${selectedDate === slot.date && selectedTime === time
-                              ? "border-[color:var(--gold)] bg-[color:var(--gold)] text-[color:var(--ink)] shadow-lg"
-                              : "border-[color:var(--border)] bg-[color:var(--surface-2)] text-[color:var(--text-primary)] hover:border-[color:var(--border-hover)] hover:bg-[color:var(--surface)]"
+                            ? "border-[color:var(--gold)] bg-[color:var(--gold)] text-[color:var(--ink)] shadow-lg"
+                            : "border-[color:var(--border)] bg-[color:var(--surface-2)] text-[color:var(--text-primary)] hover:border-[color:var(--border-hover)] hover:bg-[color:var(--surface)]"
                             }`}
                         >
                           {time}
@@ -179,8 +179,8 @@ export default function ScheduleAppointmentPage() {
                     key={type.id}
                     onClick={() => setMeetingType(type.id)}
                     className={`rounded-2xl border p-4 text-center transition-all ${meetingType === type.id
-                        ? "border-[color:var(--gold)] bg-gradient-to-br from-[color:var(--gold)]/10 to-[color:var(--blue)]/10 shadow-lg"
-                        : "border-[color:var(--border)] bg-[color:var(--surface-2)] hover:border-[color:var(--border-hover)]"
+                      ? "border-[color:var(--gold)] bg-gradient-to-br from-[color:var(--gold)]/10 to-[color:var(--blue)]/10 shadow-lg"
+                      : "border-[color:var(--border)] bg-[color:var(--surface-2)] hover:border-[color:var(--border-hover)]"
                       }`}
                   >
                     <div className="text-3xl">{type.icon}</div>
@@ -247,27 +247,27 @@ export default function ScheduleAppointmentPage() {
 
           <div className="md:col-span-5">
             <div className="sticky top-24 space-y-6">
-              <div className="rounded-3xl border border-[color:var(--border)] bg-gradient-to-br from-[color:var(--surface)] to-[color:var(--surface-2)] p-6 shadow-2xl">
-                <h3 className="text-lg font-bold text-[color:var(--text-primary)]">Appointment Summary</h3>
+              <div className="rounded-3xl border-2 border-gray-200/80 dark:border-gray-700/80 bg-white/95 dark:bg-gray-900/95 backdrop-blur-2xl p-6 shadow-2xl">
+                <h3 className="text-lg font-bold text-gray-900 dark:text-white">Appointment Summary</h3>
 
                 <div className="mt-6 space-y-4">
-                  <div className="rounded-2xl border border-[color:var(--border)] bg-[color:var(--surface)] p-4">
-                    <div className="text-xs font-semibold uppercase tracking-wider text-gray-600 dark:text-gray-400">Agent</div>
-                    <div className="mt-1 text-sm font-semibold text-[color:var(--text-primary)]">
+                  <div className="rounded-2xl border-2 border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-800/80 p-4">
+                    <div className="text-xs font-semibold uppercase tracking-wider text-gray-500 dark:text-gray-400">Agent</div>
+                    <div className="mt-1 text-sm font-semibold text-gray-900 dark:text-white">
                       {selectedAgent ? agents.find(a => a.id === selectedAgent)?.name : "Not selected"}
                     </div>
                   </div>
 
-                  <div className="rounded-2xl border border-[color:var(--border)] bg-[color:var(--surface)] p-4">
-                    <div className="text-xs font-semibold uppercase tracking-wider text-gray-600 dark:text-gray-400">Date & Time</div>
-                    <div className="mt-1 text-sm font-semibold text-[color:var(--text-primary)]">
+                  <div className="rounded-2xl border-2 border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-800/80 p-4">
+                    <div className="text-xs font-semibold uppercase tracking-wider text-gray-500 dark:text-gray-400">Date & Time</div>
+                    <div className="mt-1 text-sm font-semibold text-gray-900 dark:text-white">
                       {selectedDate && selectedTime ? `${selectedDate} at ${selectedTime}` : "Not selected"}
                     </div>
                   </div>
 
-                  <div className="rounded-2xl border border-[color:var(--border)] bg-[color:var(--surface)] p-4">
-                    <div className="text-xs font-semibold uppercase tracking-wider text-gray-600 dark:text-gray-400">Meeting Type</div>
-                    <div className="mt-1 text-sm font-semibold text-[color:var(--text-primary)]">
+                  <div className="rounded-2xl border-2 border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-800/80 p-4">
+                    <div className="text-xs font-semibold uppercase tracking-wider text-gray-500 dark:text-gray-400">Meeting Type</div>
+                    <div className="mt-1 text-sm font-semibold text-gray-900 dark:text-white">
                       {meetingType === "video" ? "Video Call" : meetingType === "phone" ? "Phone Call" : "In Office"}
                     </div>
                   </div>
@@ -276,20 +276,20 @@ export default function ScheduleAppointmentPage() {
                 <button
                   onClick={handleBooking}
                   disabled={!selectedAgent || !selectedDate || !selectedTime || !formData.name || !formData.email || !formData.phone}
-                  className="mt-6 h-12 w-full rounded-full bg-[color:var(--gold)] text-sm font-semibold text-[color:var(--ink)] transition-all hover:scale-105 hover:shadow-xl disabled:opacity-50 disabled:cursor-not-allowed"
+                  className="mt-6 h-12 w-full rounded-full bg-yellow-400 text-sm font-semibold text-gray-900 transition-all hover:scale-105 hover:shadow-xl hover:bg-yellow-500 disabled:opacity-50 disabled:cursor-not-allowed"
                 >
                   Confirm Appointment
                 </button>
 
-                <div className="mt-4 flex items-center justify-center gap-3 text-xs text-[color:var(--text-tertiary)]">
-                  <button onClick={addToGoogleCalendar} className="flex items-center gap-1 hover:text-[color:var(--text-primary)] transition-colors">
+                <div className="mt-4 flex items-center justify-center gap-3 text-xs text-gray-600 dark:text-gray-400">
+                  <button onClick={addToGoogleCalendar} className="flex items-center gap-1 hover:text-gray-900 dark:hover:text-white transition-colors">
                     <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
                     </svg>
                     Add to Google
                   </button>
                   <span>•</span>
-                  <button onClick={addToOutlookCalendar} className="flex items-center gap-1 hover:text-[color:var(--text-primary)] transition-colors">
+                  <button onClick={addToOutlookCalendar} className="flex items-center gap-1 hover:text-gray-900 dark:hover:text-white transition-colors">
                     <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
                     </svg>
@@ -298,8 +298,8 @@ export default function ScheduleAppointmentPage() {
                 </div>
               </div>
 
-              <div className="rounded-3xl border border-[color:var(--border)] bg-[color:var(--surface)] p-6 shadow-lg">
-                <div className="text-sm font-bold text-[color:var(--text-primary)]">What to Expect</div>
+              <div className="rounded-3xl border-2 border-gray-200/80 dark:border-gray-700/80 bg-white/95 dark:bg-gray-900/95 backdrop-blur-2xl p-6 shadow-lg">
+                <div className="text-sm font-bold text-gray-900 dark:text-white">What to Expect</div>
                 <div className="mt-4 space-y-3">
                   {[
                     "Free 30-minute consultation",
@@ -307,8 +307,8 @@ export default function ScheduleAppointmentPage() {
                     "Personalized recommendations",
                     "Instant quote if ready",
                   ].map((item) => (
-                    <div key={item} className="flex items-center gap-3 text-sm text-[color:var(--text-secondary)]">
-                      <svg className="h-5 w-5 text-[color:var(--gold)]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <div key={item} className="flex items-center gap-3 text-sm text-gray-700 dark:text-gray-200">
+                      <svg className="h-5 w-5 text-yellow-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                       </svg>
                       {item}
