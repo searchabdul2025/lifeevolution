@@ -121,16 +121,15 @@ export default function TestimonialsPage() {
       secondaryCta={{ href: "/talk-with-an-agent", label: "Talk With an Agent" }}
     >
       <div className="space-y-8">
-        <div className="flex gap-3 overflow-x-auto pb-2">
+        <div className="flex gap-3 overflow-x-auto scrollbar-hide pb-2">
           {filters.map((filter) => (
             <button
               key={filter.id}
               onClick={() => setActiveFilter(filter.id)}
-              className={`whitespace-nowrap rounded-full border px-5 py-2.5 text-sm font-semibold transition-all ${
-                activeFilter === filter.id
-                  ? "border-[color:var(--gold)] bg-[color:var(--gold)] text-[color:var(--ink)] shadow-lg"
-                  : "border-[color:var(--border)] bg-[color:var(--surface)] text-[color:var(--text-primary)] hover:border-[color:var(--border-hover)] hover:bg-[color:var(--surface-2)]"
-              }`}
+              className={`whitespace-nowrap rounded-full border-2 px-5 py-2.5 text-sm font-semibold transition-all ${activeFilter === filter.id
+                  ? "border-yellow-400 bg-yellow-400 text-gray-900 shadow-lg"
+                  : "border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-900 text-gray-900 dark:text-white hover:border-gray-300 dark:hover:border-gray-600 hover:bg-gray-50 dark:hover:bg-gray-800"
+                }`}
             >
               {filter.label}
             </button>
@@ -141,19 +140,19 @@ export default function TestimonialsPage() {
           {filteredTestimonials.map((testimonial, idx) => (
             <div
               key={testimonial.name}
-              className="group relative overflow-hidden rounded-[28px] border border-[color:var(--border)]/50 bg-[color:var(--surface)]/60 p-6 backdrop-blur-xl transition-all duration-500 hover:border-[color:var(--gold)]/50 hover:bg-[color:var(--surface)]/80 hover:shadow-[0_20px_70px_-15px_rgba(255,208,87,0.3)] hover:scale-[1.02]"
+              className="group relative overflow-hidden rounded-[28px] border-2 border-gray-200/80 dark:border-gray-700/80 bg-white/95 dark:bg-gray-900/95 p-6 backdrop-blur-2xl transition-all duration-500 hover:border-yellow-400/50 hover:shadow-[0_20px_70px_-15px_rgba(255,208,87,0.3)] hover:scale-[1.02]"
               style={{
                 animation: `float 6s ease-in-out infinite`,
                 animationDelay: `${idx * 0.15}s`,
               }}
             >
-              <div className="absolute inset-0 bg-gradient-to-br from-[color:var(--gold)]/5 via-transparent to-[color:var(--blue)]/5 opacity-0 transition-opacity duration-500 group-hover:opacity-100"></div>
-              
-              <div className="absolute -right-12 -top-12 h-32 w-32 rounded-full bg-[color:var(--gold)] opacity-0 blur-3xl transition-all duration-500 group-hover:opacity-20"></div>
+              <div className="absolute inset-0 bg-gradient-to-br from-yellow-400/5 via-transparent to-blue-500/5 opacity-0 transition-opacity duration-500 group-hover:opacity-100"></div>
+
+              <div className="absolute -right-12 -top-12 h-32 w-32 rounded-full bg-yellow-400 opacity-0 blur-3xl transition-all duration-500 group-hover:opacity-20"></div>
 
               <div className="relative">
                 {testimonial.videoPlaceholder && (
-                  <div className="relative mb-4 aspect-video overflow-hidden rounded-2xl bg-gradient-to-br from-[color:var(--blue)] to-[color:var(--blue-2)]">
+                  <div className="relative mb-4 aspect-video overflow-hidden rounded-2xl bg-gradient-to-br from-blue-500 to-blue-700">
                     <div className="flex h-full items-center justify-center">
                       <div className="flex h-16 w-16 items-center justify-center rounded-full bg-white/20 backdrop-blur transition-transform group-hover:scale-110">
                         <svg className="h-8 w-8 text-white" fill="currentColor" viewBox="0 0 24 24">
@@ -168,16 +167,16 @@ export default function TestimonialsPage() {
                 )}
 
                 <div className="flex items-center gap-3">
-                  <div className="h-12 w-12 rounded-full bg-gradient-to-br from-[color:var(--gold)] to-[color:var(--blue)] p-0.5">
-                    <div className="flex h-full w-full items-center justify-center rounded-full bg-[color:var(--bg)] text-sm font-bold text-[color:var(--text-primary)]">
+                  <div className="h-12 w-12 rounded-full bg-gradient-to-br from-yellow-400 to-blue-500 p-0.5">
+                    <div className="flex h-full w-full items-center justify-center rounded-full bg-white dark:bg-gray-900 text-sm font-bold text-gray-900 dark:text-white">
                       {testimonial.avatar}
                     </div>
                   </div>
                   <div>
-                    <div className="text-sm font-bold text-[color:var(--text-primary)]">
+                    <div className="text-sm font-bold text-gray-900 dark:text-white">
                       {testimonial.name}
                     </div>
-                    <div className="text-xs text-[color:var(--text-tertiary)]">
+                    <div className="text-xs text-gray-600 dark:text-gray-400">
                       {testimonial.role}
                     </div>
                   </div>
@@ -185,26 +184,26 @@ export default function TestimonialsPage() {
 
                 <div className="mt-3 flex gap-1">
                   {Array.from({ length: testimonial.rating }).map((_, i) => (
-                    <svg key={i} className="h-4 w-4 text-[color:var(--gold)]" fill="currentColor" viewBox="0 0 20 20">
+                    <svg key={i} className="h-4 w-4 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
                       <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
                     </svg>
                   ))}
                 </div>
 
-                <blockquote className="mt-4 text-sm leading-6 text-[color:var(--text-secondary)]">
+                <blockquote className="mt-4 text-sm leading-6 text-gray-700 dark:text-gray-200">
                   "{testimonial.text}"
                 </blockquote>
 
                 <div className="mt-4 flex items-center justify-between">
-                  <div className="inline-flex items-center gap-1.5 rounded-full border border-[color:var(--border)] bg-[color:var(--surface-2)] px-3 py-1 text-xs font-semibold text-[color:var(--text-tertiary)]">
+                  <div className="inline-flex items-center gap-1.5 rounded-full border-2 border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-800 px-3 py-1 text-xs font-semibold text-gray-600 dark:text-gray-400">
                     {testimonial.product}
                   </div>
-                  <div className="text-xs text-[color:var(--text-tertiary)]">
+                  <div className="text-xs text-gray-600 dark:text-gray-400">
                     {testimonial.date}
                   </div>
                 </div>
 
-                <div className="absolute bottom-0 left-0 h-1 w-0 bg-gradient-to-r from-[color:var(--gold)] via-[color:var(--blue)] to-[color:var(--gold)] transition-all duration-500 group-hover:w-full"></div>
+                <div className="absolute bottom-0 left-0 h-1 w-0 bg-gradient-to-r from-yellow-400 via-blue-500 to-yellow-400 transition-all duration-500 group-hover:w-full"></div>
               </div>
             </div>
           ))}
