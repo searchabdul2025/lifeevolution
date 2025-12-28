@@ -33,11 +33,8 @@ export function FeaturesSection() {
               <div className="inline-flex items-center gap-2 rounded-full border border-[color:var(--border)] bg-[color:var(--surface)] px-3 py-1 text-xs font-semibold uppercase tracking-[0.22em] text-[color:var(--text-tertiary)]">
                 Why choose us
               </div>
-              <h2 className="mt-6 text-balance text-4xl font-bold tracking-tight text-[color:var(--text-primary)] md:text-5xl">
-                Premium service.{" "}
-                <span className="bg-gradient-to-r from-[color:var(--blue)] to-[color:var(--blue-2)] bg-clip-text text-transparent">
-                  Precise recommendations.
-                </span>
+              <h2 className="mt-6 text-balance text-4xl font-bold tracking-tight text-gray-900 dark:text-white md:text-5xl">
+                Premium service. Precise recommendations.
               </h2>
               <p className="mt-6 text-pretty text-lg leading-8 text-[color:var(--text-secondary)]">
                 You get a modern experience without losing the human care. Transparent
@@ -58,7 +55,7 @@ export function FeaturesSection() {
                   }}
                 >
                   <div className="absolute -right-10 -top-10 h-32 w-32 rounded-full bg-[color:var(--gold)] opacity-20 blur-2xl transition-all group-hover:opacity-30"></div>
-                  
+
                   <div className="relative">
                     <div className="text-4xl">{feature.icon}</div>
                     <div className="mt-4 text-lg font-bold text-gray-900 dark:text-white">
